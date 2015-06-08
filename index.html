@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoteWrangler">
+<head>
+	<title>Note Wrangler</title>
+	<link rel="stylesheet" type="text/css" href="css/application.css"/>
+</head>
+<body>
+  <div class="nav-list">
+  	<a href="#/notes">Notes</a> <!--angular will lookup /notes in routes.js and load appropriate templateUrl-->
+  	<a href="#/users">Users</a>
+  </div>
+<div class="main-wrapper">
+<!--
+  4 steps to using routing:
+  1. use ngView - tells Angular where to load templates
+  2. load ngRoute library
+  3. import ngRoute module
+  4. define route itself
+-->
+
+<!--
+  this index.html can not be referenced statically,
+  needs something on the backend to be served it up, e.g. by brackets, node, ruby on rails
+  put all of the levels inside one public folder
+-->
+	<div ng-view></div>
+</div>
+
+
+<script src="./js/vendor/angular.min.js"></script>
+<script src="./js/vendor/angular-route.min.js"></script>
+<script src="./js/vendor/angular-resource.min.js"></script>
+
+<script src="./js/app.js"></script>
+<script src="./js/routes.js"></script>
+</body>
+</html>
